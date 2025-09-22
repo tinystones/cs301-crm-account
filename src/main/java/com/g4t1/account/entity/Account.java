@@ -20,7 +20,7 @@ import lombok.Setter;
 public class Account {
 
     @Id
-    @Column(name = "account_id", nullable = false)
+    @Column(name = "account_id", updatable = false, nullable = false)
     private String id;
 
     @Column(name = "client_id", nullable = false)

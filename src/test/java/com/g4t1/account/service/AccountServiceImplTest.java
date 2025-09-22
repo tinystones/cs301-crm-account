@@ -1,4 +1,4 @@
-package com.g4t1.account;
+package com.g4t1.account.service;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.*;
@@ -19,8 +19,7 @@ import com.g4t1.account.repository.AccountRepository;
 import com.g4t1.account.service.impl.AccountServiceImpl;
 
 @ExtendWith(MockitoExtension.class)
-class AccountApplicationTests {
-
+public class AccountServiceImplTest {
     @Mock
     private AccountRepository repository;
 
@@ -111,7 +110,7 @@ class AccountApplicationTests {
         void createAccount_givenAccountWithID_throwsInvalidAccountSourceDataException() {
             /* Arrange */
             goodSource.setId("exisiting-id");
-            
+
             /* Act & Assert */
             ex = assertThrows(InvalidAccountSouceDataException.class,
                     () -> service.createAccount(goodSource));
